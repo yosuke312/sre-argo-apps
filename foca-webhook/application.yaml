@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: foca-webhook
+spec:
+  project: default
+  destination:
+    namespace: sre-tooling
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: 'https://yosuke312.github.io/sre-helm-charts'
+    chart: foca-webhook
+    targetRevision: 0.4.0
+    helm:
+      releaseName: foca-webhook

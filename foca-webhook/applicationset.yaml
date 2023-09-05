@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: 'https://yosuke312.github.io/sre-helm-charts'
         chart: foca-webhook
-        targetRevision: 0.4.0
+        targetRevision: 0.5.0
         helm:
           releaseName: foca-webhook
           valueFiles:

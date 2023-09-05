@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: foca-webhook
+  namespace: openshift-gitops
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/yosuke312/sre-argo-apps
+      revision: master
+      files:
+      - path: foca-webhook/kingdoms/*.json
+  template:
+    metadata:
+      name: '{{ cluster.name }}-foca-webhook'
+    spec:
+      project: default
+      destination:
+        namespace: '{{ cluster.namespace }}'
+        server: '{{ cluster.server }}'
+      source:
+        repoURL: 'https://yosuke312.github.io/sre-helm-charts'
+        chart: foca-webhook
+        targetRevision: 0.4.0
+        helm:
+          releaseName: foca-webhook
+          valueFiles:
+          - 'kingdom-configs/{{ cluster.name }}.yaml'

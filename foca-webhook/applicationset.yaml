@@ -25,4 +25,4 @@ spec:
         helm:
           releaseName: foca-webhook
           valueFiles:
-          - 'foca-webhook/kingdom-configs/{{ cluster.name }}.yaml'
+          - 'kingdom-configs/{{ cluster.name }}.yaml'

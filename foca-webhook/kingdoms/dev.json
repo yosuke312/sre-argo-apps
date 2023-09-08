@@ -2,6 +2,12 @@
     "cluster": {
         "name": "dev",
         "server": "https://kubernetes.default.svc",
-        "namespace": "sre-tooling-dev"
+        "namespace": "sre-tooling-dev",
+        "syncPolicy": {
+            "automated":{
+                "prune": true,
+                "selfHeal": true
+            }
+        }
     }
 }

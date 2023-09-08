@@ -13,3 +13,8 @@ image:
 service:
   type: ClusterIP
   port: 80
+
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true

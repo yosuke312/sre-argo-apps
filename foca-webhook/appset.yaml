@@ -28,5 +28,5 @@ spec:
           - 'kingdom-configs/{{ cluster.name }}.yaml'
       syncPolicy:
         automated:
-          prune: true
-          selfHeal: true
+          prune: {{ cluster.syncPolicy.automated.prune }}
+          selfHeal: {{ cluster.syncPolicy.automated.selfHeal }}

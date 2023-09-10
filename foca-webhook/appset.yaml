@@ -26,7 +26,3 @@ spec:
           releaseName: foca-webhook
           valueFiles:
           - 'kingdom-configs/{{ cluster.name }}.yaml'
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: foca-webhook
+  name: nginx
   namespace: openshift-gitops
 spec:
   generators:
@@ -9,10 +9,10 @@ spec:
       repoURL: https://github.com/yosuke312/sre-argo-apps
       revision: master
       files:
-      - path: foca-webhook/kingdoms/*.json
+      - path: nginx/kingdoms/*.json
   template:
     metadata:
-      name: '{{ cluster.name }}-foca-webhook'
+      name: '{{ cluster.name }}-nginx'
     spec:
       project: default
       destination:
@@ -20,9 +20,14 @@ spec:
         server: '{{ cluster.server }}'
       source:
         repoURL: 'https://yosuke312.github.io/sre-helm-charts'
-        chart: foca-webhook
+        chart: nginx
         targetRevision: 0.9.0
         helm:
-          releaseName: foca-webhook
+          releaseName: nginx
           valueFiles:
           - 'kingdom-configs/{{ cluster.name }}.yaml'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+

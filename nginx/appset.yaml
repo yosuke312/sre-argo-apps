@@ -19,7 +19,7 @@ spec:
         namespace: '{{ cluster.namespace }}'
         server: '{{ cluster.server }}'
       source:
-        repoURL: 'https://yosuke312.github.com/sre-helm-charts'
+        repoURL: 'https://github.com/yosuke312/sre-helm-charts'
         targetRevision: 0.9.0
         path: nginx
         helm:

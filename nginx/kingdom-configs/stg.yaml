@@ -2,3 +2,15 @@ cluster:
   name: stg
   server: https://kubernetes.default.svc
   namespace: sre-tooling-stg
+
+kingdom: stg
+replicaCount: 1
+
+image:
+  repository: nginxinc/nginx-unprivileged
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+service:
+  type: ClusterIP
+  port: 80

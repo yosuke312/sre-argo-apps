@@ -25,10 +25,9 @@ spec:
         helm:
           releaseName: nginx
           valueFiles:
-          - {{ `"$values/kingdom-configs/{{ cluster.name }}.yaml"` }}
+          - {{ `"$values/nginx/kingdom-configs/{{ cluster.name }}.yaml"` }}
       - repoURL: https://github.com/yosuke312/sre-argo-apps
         targetRevision: master
-        path: nginx
         ref: values
 
       syncPolicy:

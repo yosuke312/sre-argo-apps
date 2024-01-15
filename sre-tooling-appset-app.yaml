@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/yosuke312/sre-argo-apps'
     targetRevision: master
-    path: sre-tooling-appset-app
+    path: sre-tooling-appset-app-helm
     helm:
       releaseName: sre-tooling-appset-app
   syncPolicy:

@@ -29,8 +29,7 @@ spec:
       - repoURL: https://github.com/yosuke312/sre-argo-apps
         targetRevision: master
         path: nginx
-        ref:
-          values
+        ref: values
 
       syncPolicy:
         automated:

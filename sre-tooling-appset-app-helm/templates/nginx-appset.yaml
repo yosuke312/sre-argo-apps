@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/yosuke312/sre-argo-apps
       revision: master
       files:
-      - path: nginx/kingdoms/*.json
+      - path: nginx/kingdom-configs/*.yaml
   template:
     metadata:
       name: {{ `"{{ cluster.name }}-nginx"` }}

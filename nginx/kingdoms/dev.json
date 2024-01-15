@@ -1,7 +1,0 @@
-{
-    "cluster": {
-        "name": "dev",
-        "server": "https://kubernetes.default.svc",
-        "namespace": "sre-tooling-dev"
-    }
-}

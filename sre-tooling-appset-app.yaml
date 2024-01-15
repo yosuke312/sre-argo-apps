@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sre-tooling-appset-app
+spec:
+  project: default
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: "openshift-gitops"
+  source:
+    repoURL: 'https://github.com/yosuke312/sre-argo-apps'
+    targetRevision: master
+    path: sre-tooling-appset-app
+    helm:
+      releaseName: sre-tooling-appset-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -12,12 +12,12 @@ spec:
       - path: nginx/kingdoms/*.json
   template:
     metadata:
-      name: '{{ cluster.name }}-nginx'
+      name: `{{ cluster.name }}-nginx`
     spec:
       project: default
       destination:
-        namespace: '{{ cluster.namespace }}'
-        server: '{{ cluster.server }}'
+        namespace: `{{ cluster.namespace }}`
+        server: `{{ cluster.server }}`
       source:
         repoURL: 'https://github.com/yosuke312/sre-helm-charts'
         targetRevision: 0.11.0a
@@ -25,7 +25,7 @@ spec:
         helm:
           releaseName: nginx
           valueFiles:
-          - 'kingdom-configs/{{ cluster.name }}.yaml'
+          - `kingdom-configs/{{ cluster.name }}.yaml`
       syncPolicy:
         automated:
           prune: true

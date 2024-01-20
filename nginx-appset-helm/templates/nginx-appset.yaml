@@ -25,7 +25,7 @@ spec:
         helm:
           releaseName: nginx
           valueFiles:
-          - {{ `"nginx/kingdom-configs/{{ cluster.name }}.yaml"` }}
+          - {{ `"../nginx/kingdom-configs/{{ cluster.name }}.yaml"` }}
 
       syncPolicy:
         automated:

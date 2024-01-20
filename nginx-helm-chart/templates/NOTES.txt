@@ -1,0 +1,1 @@
+Minimum installation of NGINX with Helm chart!

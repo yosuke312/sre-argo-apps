@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: "true"
+  labels:
+    app: nginx
+    kingdom: "{{ .Values.kingdom }}"
+  name: nginx
+spec:
+  host: nginx-{{ .Values.kingdom }}.apps-crc.testing
+  port:
+    targetPort: 8080-tcp
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: nginx
+    weight: 100
+  wildcardPolicy: None

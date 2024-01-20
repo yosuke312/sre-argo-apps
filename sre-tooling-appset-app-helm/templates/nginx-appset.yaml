@@ -19,8 +19,8 @@ spec:
         namespace: {{ `"{{ cluster.namespace }}"` }}
         server: {{ `"{{ cluster.server }}"` }}
       sources:
-      - repoURL: 'https://github.com/yosuke312/sre-helm-charts'
-        targetRevision: 0.11.0b
+      - repoURL: 'https://github.com/yosuke312/sre-argo-apps'
+        targetRevision: master
         path: nginx
         helm:
           releaseName: nginx

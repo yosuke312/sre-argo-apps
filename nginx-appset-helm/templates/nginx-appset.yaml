@@ -19,7 +19,7 @@ spec:
         namespace: {{ `"{{ cluster.namespace }}"` }}
         server: {{ `"{{ cluster.server }}"` }}
       source:
-      - repoURL: 'https://github.com/yosuke312/sre-argo-apps'
+        repoURL: 'https://github.com/yosuke312/sre-argo-apps'
         targetRevision: HEAD
         path: nginx-helm-chart
         helm:

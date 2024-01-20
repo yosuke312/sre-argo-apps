@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sre-tooling-appset-app
+  name: nginx-appset-app
 spec:
   project: default
   destination:
@@ -9,10 +9,10 @@ spec:
     namespace: "openshift-gitops"
   source:
     repoURL: 'https://github.com/yosuke312/sre-argo-apps'
-    targetRevision: master
-    path: sre-tooling-appset-app-helm
+    targetRevision: HEAD
+    path: nginx-appset-helm
     helm:
-      releaseName: sre-tooling-appset-app
+      releaseName: nginx-appset
   syncPolicy:
     automated:
       prune: true

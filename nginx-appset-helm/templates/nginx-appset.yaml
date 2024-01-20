@@ -7,7 +7,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/yosuke312/sre-argo-apps
-      revision: master
+      revision: HEAD
       files:
       - path: nginx/kingdom-configs/*.yaml
   template:
@@ -20,14 +20,14 @@ spec:
         server: {{ `"{{ cluster.server }}"` }}
       sources:
       - repoURL: 'https://github.com/yosuke312/sre-argo-apps'
-        targetRevision: master
+        targetRevision: HEAD
         path: nginx
         helm:
           releaseName: nginx
           valueFiles:
           - {{ `"$values/nginx/kingdom-configs/{{ cluster.name }}.yaml"` }}
       - repoURL: https://github.com/yosuke312/sre-argo-apps
-        targetRevision: master
+        targetRevision: HEAD
         ref: values
 
       syncPolicy:

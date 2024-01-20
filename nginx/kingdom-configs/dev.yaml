@@ -2,6 +2,7 @@ cluster:
   name: dev
   server: https://kubernetes.default.svc
   namespace: sre-tooling-dev
+  targetRevisionTag: dev
 
 kingdom: dev
 replicaCount: 1

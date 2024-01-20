@@ -2,6 +2,7 @@ cluster:
   name: stg
   server: https://kubernetes.default.svc
   namespace: sre-tooling-stg
+  targetRevisionTag: stg
 
 kingdom: stg
 replicaCount: 1

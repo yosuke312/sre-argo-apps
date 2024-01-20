@@ -20,14 +20,14 @@ spec:
         server: {{ `"{{ cluster.server }}"` }}
       sources:
       - repoURL: 'https://github.com/yosuke312/sre-argo-apps'
-        targetRevision: HEAD
+        targetRevision: {{ `"{{ cluster.targetRevisionTag }}"` }}
         path: nginx-helm-chart
         helm:
           releaseName: nginx
           valueFiles:
           - {{ `"$values/nginx/kingdom-configs/{{ cluster.name }}.yaml"` }}
       - repoURL: https://github.com/yosuke312/sre-argo-apps
-        targetRevision: HEAD
+        targetRevision: {{ `"{{ cluster.targetRevisionTag }}"` }}
         ref: values
 
       syncPolicy:

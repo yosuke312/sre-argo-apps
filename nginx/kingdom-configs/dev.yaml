@@ -5,7 +5,6 @@ cluster:
   targetRevisionTag: dev
 
 kingdom: dev
-replicaCount: 1
 
 image:
   repository: nginxinc/nginx-unprivileged

@@ -5,7 +5,7 @@ cluster:
   targetRevisionTag: stg
 
 kingdom: stg
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: nginxinc/nginx-unprivileged

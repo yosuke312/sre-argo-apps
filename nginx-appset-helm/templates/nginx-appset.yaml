@@ -18,17 +18,14 @@ spec:
       destination:
         namespace: {{ `"{{ cluster.namespace }}"` }}
         server: {{ `"{{ cluster.server }}"` }}
-      sources:
+      source:
       - repoURL: 'https://github.com/yosuke312/sre-argo-apps'
         targetRevision: HEAD
         path: nginx-helm-chart
         helm:
           releaseName: nginx
           valueFiles:
-          - {{ `"$values/nginx/kingdom-configs/{{ cluster.name }}.yaml"` }}
-      - repoURL: https://github.com/yosuke312/sre-argo-apps
-        targetRevision: HEAD
-        ref: values
+          - {{ `"nginx/kingdom-configs/{{ cluster.name }}.yaml"` }}
 
       syncPolicy:
         automated:

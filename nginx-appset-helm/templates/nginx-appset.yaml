@@ -21,7 +21,7 @@ spec:
       sources:
       - repoURL: 'https://github.com/yosuke312/sre-argo-apps'
         targetRevision: HEAD
-        path: nginx
+        path: nginx-helm-chart
         helm:
           releaseName: nginx
           valueFiles:

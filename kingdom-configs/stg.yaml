@@ -2,10 +2,10 @@ cluster:
   name: stg
   server: https://kubernetes.default.svc
   namespace: sre-tooling-stg
-  syncPolicy: {}
-    # automated:
-    #   prune: true
-    #   selfHeal: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 
 kingdom: stg
 replicaCount: 2

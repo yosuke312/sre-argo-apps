@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 kingdom: dev
-replicaCount: 3
+replicaCount: 1
 
 image:
   repository: nginxinc/nginx-unprivileged

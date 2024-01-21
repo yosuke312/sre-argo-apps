@@ -29,10 +29,10 @@ spec:
           valueFiles:
           - {{ `"../kingdom-configs/{{ .cluster.name }}.yaml"` }}
 
-      {{`{{- if .cluster.autoSync  }}`}}
+      {{- if .cluster.autoSync  }}
         syncPolicy:
           automated:
             prune: true
             selfHeal: true
-      {{`{{- end }}`}}
+      {{- end }}
 

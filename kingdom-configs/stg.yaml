@@ -6,7 +6,6 @@ cluster:
   autoSync: false
 
 kingdom: stg
-replicaCount: 2
 
 image:
   repository: nginxinc/nginx-unprivileged

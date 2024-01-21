@@ -3,11 +3,7 @@ cluster:
   server: https://kubernetes.default.svc
   namespace: sre-tooling-dev
   targetReisionTag: dev
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-
+  autoSync: true
 
 kingdom: dev
 

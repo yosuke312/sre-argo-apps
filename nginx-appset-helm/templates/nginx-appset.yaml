@@ -30,9 +30,9 @@ spec:
           - {{ `"../kingdom-configs/{{ .cluster.name }}.yaml"` }}
 
       {{- if .cluster.autoSync  }}
-        syncPolicy:
-          automated:
-            prune: true
-            selfHeal: true
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
       {{- end }}
 

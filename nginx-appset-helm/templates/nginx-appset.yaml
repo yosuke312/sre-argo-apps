@@ -23,9 +23,10 @@ spec:
         targetRevision: HEAD
         path: nginx-helm-chart
         helm:
+          debug: true
           releaseName: nginx
           valueFiles:
           - {{ `"../kingdom-configs/{{ cluster.name }}.yaml"` }}
 
-      syncPolicy: {{ printf "{{ cluster.syncPolicy }}" }}
+      syncPolicy: {{ printf "{{ cluster.syncPolicy.automated }}" }}
 

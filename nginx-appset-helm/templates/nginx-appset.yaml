@@ -12,12 +12,13 @@ spec:
       - path: kingdom-configs/*.yaml
   template:
     metadata:
-      name: {{ `"{{ cluster.name }}-nginx-app"` }}
+      name: {{ `"{{ .cluster.name }}-nginx-app"` }}
     spec:
+      goTemplate: true
       project: default
       destination:
-        namespace: {{ `"{{ cluster.namespace }}"` }}
-        server: {{ `"{{ cluster.server }}"` }}
+        namespace: {{ `"{{ .cluster.namespace }}"` }}
+        server: {{ `"{{ .cluster.server }}"` }}
       source:
         repoURL: 'https://github.com/yosuke312/sre-argo-apps'
         targetRevision: HEAD
@@ -26,7 +27,7 @@ spec:
           debug: true
           releaseName: nginx
           valueFiles:
-          - {{ `"../kingdom-configs/{{ cluster.name }}.yaml"` }}
+          - {{ `"../kingdom-configs/{{ .cluster.name }}.yaml"` }}
 
-      syncPolicy: {{ printf "{{ cluster.syncPolicy.automated }}" }}
+      syncPolicy: {{ `{{ .cluster.syncPolicy.automated }}` }}
 

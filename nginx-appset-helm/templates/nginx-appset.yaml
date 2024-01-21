@@ -27,5 +27,5 @@ spec:
           valueFiles:
           - {{ `"../kingdom-configs/{{ cluster.name }}.yaml"` }}
 
-      syncPolicy: {{ `{{ cluster.syncPolicy }}` }}
+      syncPolicy: {{ printf "{{ cluster.syncPolicy }}" }}
 

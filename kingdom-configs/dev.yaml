@@ -3,7 +3,8 @@ cluster:
   server: https://kubernetes.default.svc
   namespace: sre-tooling-dev
   targetReisionTag: dev
-  autoSync: true
+
+autoSync: true
 
 kingdom: dev
 

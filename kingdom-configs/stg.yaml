@@ -2,7 +2,8 @@ cluster:
   name: stg
   server: https://kubernetes.default.svc
   namespace: sre-tooling-stg
-  autoSync: false
+
+autoSync: false
 
 kingdom: stg
 replicaCount: 2

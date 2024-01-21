@@ -21,7 +21,7 @@ spec:
         server: {{ `"{{ .cluster.server }}"` }}
       source:
         repoURL: 'https://github.com/yosuke312/sre-argo-apps'
-        targetRevision: {{ `{{.cluster.targetBranch}}`}}
+        targetRevision: {{ `"{{.cluster.targetBranch}}"`}}
         path: nginx-helm-chart
         helm:
           releaseName: nginx

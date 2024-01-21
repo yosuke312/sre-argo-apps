@@ -2,6 +2,7 @@ cluster:
   name: stg
   server: https://kubernetes.default.svc
   namespace: sre-tooling-stg
+  targetBranch: master
   autoSync: false
 
 kingdom: stg

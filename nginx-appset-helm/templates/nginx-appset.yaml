@@ -27,8 +27,5 @@ spec:
           valueFiles:
           - {{ `"../kingdom-configs/{{ cluster.name }}.yaml"` }}
 
-      # syncPolicy:
-      #   automated:
-      #     prune: true
-      #     selfHeal: true
+      {{ `{{ cluster.syncPolicy }}` }}
 
